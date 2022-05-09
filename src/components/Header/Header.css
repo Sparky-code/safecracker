@@ -1,0 +1,19 @@
+.Header {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.instructions {
+    position: absolute;
+    left: 1em;
+    top: 2.2em;
+}
+
+.leaderboard {
+    position: absolute;
+    right: 1em;
+    top: 2.2em;
+}
