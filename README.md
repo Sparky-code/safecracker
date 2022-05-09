@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,34 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+<div align='center'>
+  <h1>Safe Cracker</h1>
+A version of the classic guessing game, mastermind. The player has 10 chances to guess the sequence of numbers within a chosen time limit
+ 
+//
+//
+//
+//
+// Game Cover Screen Image //
+//
+//
+//
+</div>
+
+
+
+# Downloads
+### Download from Github
+* [Source Code]()
+### Download from the Command Line
+*You must have git installed*
+* ``` data request ```
+# Game Access
+* Open the **index.html** file in your browser to play the game
+# Game Play
+.
+.
+.
+# Resources
+>>>>>>> d40f294135be005bae7c0ca380561eae5a655dd9
