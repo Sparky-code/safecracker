@@ -25,7 +25,8 @@ function App() {
         setSuperSecretNumbers(Math.floor(Math.random() * (number + 1)));
       }
     }
-    if(firstRun) getRandomNumbers();
+    // cors issue with external API > fallback to random number generator
+    if(firstRun) setSuperSecretNumbers(['','','',''].map(() => Math.floor(Math.random() * (4 + 1)).toString()));
     setFirstRun(false);
   }, [firstRun])
 

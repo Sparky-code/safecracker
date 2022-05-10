@@ -7,12 +7,12 @@ import BoxRow from "./BoxRow";
 function Gridbox({ rows }) {
     const {resultsApi:[results, setResults]} = useContext(GameContext);
     
-    function handleSubmission(submission) {
-        console.log(submission)
+    function handleSuccess() {
+        console.log('success!')
     }
 
     return <div className="GridBox">
-        { new Array(rows).fill("").map((row, i) => <BoxRow key={`rowKey-${i}`} row={i} handleSubmission={handleSubmission}/>) }
+        { new Array(rows).fill("").map((row, i) => <BoxRow key={`rowKey-${i}`} row={i} handleSuccess={handleSuccess}/>) }
     </div>
 }
 
