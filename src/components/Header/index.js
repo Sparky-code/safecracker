@@ -1,13 +1,28 @@
+import { useState } from "react";
 import "./Header.css";
-import QuestionMark from "./questionMark.svg";
-import Award from "./award.svg";
+import { Award, QuestionMark } from "../../assets";
+import Overlay from "../Overlay";
+import { instructions } from "./constants";
 
 
 function Header() {
+    const [isOpen, setIsOpen] = useState(false);
+    const [overlayContent, setOverlayContent] = useState('');
+
+    const handleAwardClick = () => {
+        setOverlayContent(Award);
+        setIsOpen(true)
+    } 
+    const handleQuestionMarkClick = () => {
+        setOverlayContent(instructions);
+        setIsOpen(true)
+    } 
+
     return <div className="Header">
-        <img src={QuestionMark} alt="question mark symbol" className="instructions"/>
-        <img src={Award} alt="award symbol" className="leaderboard"/>
+        <img src={QuestionMark} alt="question mark symbol" className="instructions" onClick={ handleQuestionMarkClick }/>
+        <img src={Award} alt="award symbol" className="leaderboard" onClick={ handleAwardClick }/>
         <h1>Safe Cracker</h1>
+       { isOpen && <Overlay closeOverlay={() => {setIsOpen(false)}}>{overlayContent}</Overlay> }
     </div>
 }
 
