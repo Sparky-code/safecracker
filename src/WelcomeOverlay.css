@@ -1,0 +1,87 @@
+.WelcomeOverlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #8bfae9;
+}
+
+.Title {
+    font-size: 5em;
+    margin-bottom: 30px;
+}
+
+.unlockIcon {
+    height: 0.8em;
+}
+
+.userInputContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.userInputLabel {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.errorText {
+    color: #eb6666;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: auto;
+}
+
+.userInput {
+    font-size: 18px;
+    border: none;
+    background-color: inherit;
+    border-bottom: 1px solid black;
+    padding: 5px;
+}
+
+.userInput:-webkit-autofill,
+.userInput:-webkit-autofill:hover, 
+.userInput:-webkit-autofill:focus, 
+.userInput:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #8bfae9 inset !important;
+}
+
+.userInput:focus-visible {
+    outline: none;
+}
+
+.gameModeButtonGroup {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+[class*="gameModeButtons"] {
+    border: none;
+    background-color: inherit;
+    border-bottom: 1px solid transparent;
+    padding: 15px;
+    margin: 15px 7.5px;
+    width: 110px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+[class*="gameModeButtons"].active, 
+[class*="gameModeButtons"]:hover {
+    border-bottom: 1px solid black;
+}
+
+.startButton {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    font-size: 3em;
+}

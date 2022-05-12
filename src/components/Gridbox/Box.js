@@ -16,11 +16,15 @@ function Box({ boxKey, handleSelection }) {
         handleSelection(boxKey, value);
     }
 
-    return <div className='Box' onClick={() => {
+    function handleBlur() {
+        setEditing(false)
+    }
+
+    return <div className={`Box${editing ? ' active':''}`} onClick={() => {
         if(!boxValue) setEditing(true);
     }}>
         <span className='boxValue'>{boxValue}</span>
-        {editing && <input className='boxInput' autoFocus value={boxValue} onChange={handleChange}/>}
+        {editing && <input className='boxInput' autoFocus value={boxValue} onChange={handleChange} onBlur={handleBlur}/>}
     </div>
 }
 

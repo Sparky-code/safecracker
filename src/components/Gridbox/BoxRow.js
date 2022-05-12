@@ -1,26 +1,36 @@
 import { useContext, useState, useEffect } from "react";
 import GameContext from "../../context";
 import Box from "./Box";
+import BoxRowResults from "./BoxRowResults";
 import './Gridbox.css'
 
-function BoxRow({ row, handleSuccess }) {
-    const {resultsApi:[results], superSecretNumbers} = useContext(GameContext);
-    console.log(superSecretNumbers)
-    const [rowResults, setRowResults] = useState(results[row] ?? {box0:'', box1:'', box2:'', box3:'',});
+function BoxRow({ cells, maybeHandleFail, row }) {
+    const {superSecretNumbers} = useContext(GameContext);
+    const [rowResults, setRowResults] = useState(new Array(cells).fill('').reduce((agg, cell, i) => ({...agg, [`box${i}`]: ''}), {}));
+    const [isActive, setIsActive] = useState(true);
 
     function handleSelection(boxKey, boxValue) {
         setRowResults({...rowResults, [`${boxKey}`]:boxValue});
     }
 
     useEffect(()=> {
-        const values = Object.values(rowResults).filter((rowResult) => rowResult !== '');
-        if(values.length !== 4) return;
-        console.log(superSecretNumbers.every((superSecretNumber, i) => values[i] === superSecretNumber))
-        if(superSecretNumbers.every((superSecretNumber, i) => values[i] === superSecretNumber)) handleSuccess();
-    },[rowResults, handleSuccess, superSecretNumbers]);
+        if(superSecretNumbers) {
+            const values = Object.values(rowResults).filter((rowResult) => rowResult !== '');
+            if(values.length !== superSecretNumbers.length) return;
+            if(superSecretNumbers.every((superSecretNumber, i) => values[i] === superSecretNumber)) {
+                maybeHandleFail(row, true);
+            } else {
+                maybeHandleFail(row);
+            }
+            setIsActive(false);
+        }
+    },[rowResults, maybeHandleFail, superSecretNumbers]);
 
-    return <div className="BoxRow">
-        {Object.keys(rowResults).map((boxKey) => <Box key={boxKey} boxKey={boxKey} handleSelection={handleSelection}/>)}
+    return <div  className={`BoxRow${isActive ? '':' failed'}`}>
+        <div className={`BoxRowNumbers${isActive ? '':' failed'}`}>
+            {Object.keys(rowResults).map((boxKey) => <Box key={boxKey} boxKey={boxKey} handleSelection={handleSelection}/>)}
+        </div>
+        {superSecretNumbers && superSecretNumbers.length && Object.values(rowResults).length === cells && <BoxRowResults rowResults={Object.values(rowResults)} isActive={isActive} superSecretNumbers={superSecretNumbers}/>}
     </div>
 }
 

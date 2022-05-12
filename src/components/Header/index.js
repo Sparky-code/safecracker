@@ -20,8 +20,8 @@ function Header() {
 
     return <div className="Header">
         <img src={QuestionMark} alt="question mark symbol" className="instructions" onClick={ handleQuestionMarkClick }/>
+        <h1 className="titleText">Safe Cracker</h1>
         <img src={Award} alt="award symbol" className="leaderboard" onClick={ handleAwardClick }/>
-        <h1>Safe Cracker</h1>
        { isOpen && <Overlay closeOverlay={() => {setIsOpen(false)}}>{overlayContent}</Overlay> }
     </div>
 }

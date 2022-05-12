@@ -100,3 +100,24 @@ A version of the classic guessing game, mastermind. The player has 10 chances to
 .
 # Resources
 >>>>>>> d40f294135be005bae7c0ca380561eae5a655dd9
+
+
+# Ref for later 
+
+    // async function getRandomNumbers() {
+    //   const number = 4;
+    //   const maxNumber = 7;
+    //   const query = `?num=4&min=0&max=${maxNumber}&col=1&base=10&format=plain&rnd=new`;
+    //   const url = `https://www.random.org/integers/${query}`;
+      
+    //   try {
+    //     let res = await fetch(url, {method:'GET', mode:'cors', credentials:'same-origin', headers:{'Content-Type':'application/json'}, referrerPolicy:'origin-when-cross-origin'});
+    //     // res = await res.json();
+    //     console.log(res)
+    //     setSuperSecretNumbers(res);
+    //   } catch (error) {
+    //     console.log(error)
+    //     setSuperSecretNumbers(Math.floor(Math.random() * (number + 1)));
+    //   }
+    // }
+    // cors issue with external API > fallback to random number generator

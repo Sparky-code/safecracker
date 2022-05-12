@@ -2,41 +2,51 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import { Gridbox, Header } from './components';
 import GameContext from './context';
+import Animation from './components/Animation/Animation';
+import WelcomeOverlay from './WelcomeOverlay';
+import Success from './Success';
 
 function App() {
   const [firstRun, setFirstRun] = useState(true);
-  const [results, setResults] = useState({});
   const [superSecretNumbers, setSuperSecretNumbers] = useState();
+  const [gameConfig, setGameConfig] = useState();
+  const [gameComplete, setGameComplete] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  function maybeHandleFail(row, success) {
+    if(success) {
+      setSuccess(true);
+      return;
+    }
+    if(gameConfig.difficulty.rows -1 === row) {
+      setGameComplete(true);
+    }
+  }
 
   useEffect(() => {
-    async function getRandomNumbers() {
-      const number = 4;
-      const maxNumber = 7;
-      const query = `?num=4&min=0&max=${maxNumber}&col=1&base=10&format=plain&rnd=new`;
-      const url = `https://www.random.org/integers/${query}`;
-      
-      try {
-        let res = await fetch(url, {method:'GET', mode:'cors', credentials:'same-origin', headers:{'Content-Type':'application/json'}, referrerPolicy:'origin-when-cross-origin'});
-        // res = await res.json();
-        console.log(res)
-        setSuperSecretNumbers(res);
-      } catch (error) {
-        console.log(error)
-        setSuperSecretNumbers(Math.floor(Math.random() * (number + 1)));
-      }
+    if(firstRun && gameConfig) {
+      setSuperSecretNumbers(new Array(gameConfig.difficulty.cells).fill('').map(() => Math.floor(Math.random() * (gameConfig.difficulty.cells + 1)).toString()));
+      setFirstRun(false);
     }
-    // cors issue with external API > fallback to random number generator
-    if(firstRun) setSuperSecretNumbers(['','','',''].map(() => Math.floor(Math.random() * (4 + 1)).toString()));
-    setFirstRun(false);
-  }, [firstRun])
+  }, [firstRun, gameConfig])
 
   return (
-    <GameContext.Provider value={{resultsApi:[results, setResults], superSecretNumbers}}>
-      <div className="App">
+    <>
+      {!gameConfig ? <WelcomeOverlay setGameConfig={setGameConfig} /> : <GameContext.Provider value={{ superSecretNumbers }}>
         <Header/>
-        <Gridbox rows={3}/>
-    </div>
-    </GameContext.Provider>
+        {success && <Success/>}
+        <div className="App">
+          <div className='gameData'>
+            <div className='gameMetrics'>Timer</div><br/>
+            <div className="safeAnimation">
+              <Animation className="animation"/>
+            </div>
+            <div className='secretNumbersDisplay'>{superSecretNumbers && gameComplete ? <span className='superSecretReveal'>{superSecretNumbers}</span> : new Array(gameConfig.difficulty.cells).fill('*')}</div>
+          </div>
+          <Gridbox gameSettings={gameConfig.difficulty} maybeHandleFail={maybeHandleFail} />
+        </div>
+      </GameContext.Provider>}
+    </>
   );
 }
 

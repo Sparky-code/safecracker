@@ -4,15 +4,16 @@
     right: 0px;
     bottom: 0px;
     left: 0px;
-    background-color: #00000040;
+    background-color: #00000060;
     z-index: 9999999;
 }
 
 .overlayContent {
     position: absolute;
-    top: 10%;
-    right: 20%;
-    left: 20%;
+    text-align: left;
+    top: 14.7%;
+    right: 31.5%;
+    left: 31.5%;
     padding: 30px;
     background-color: white;
 }

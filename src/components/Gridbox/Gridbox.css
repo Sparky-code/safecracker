@@ -1,31 +1,50 @@
 .GridBox {
     display: flex;
     flex-direction: column;
-    margin: 30px;
+    margin-left: 20px;
 }
 
 .BoxRow {
     display: flex;
+}
+
+.BoxRowNumbers {
+    display: flex;
     justify-content: center;
     margin-bottom: 15px;
+    padding-bottom: 4px;
+    border: 1px solid #80808080;
+}
+
+.BoxRowNumbers.failed {
+    background-color: #00000020;
+    pointer-events: none;
+}
+
+.BoxRowResults {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    border: 1px solid #80808080;
 }
 
 .Box {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    width: 50px;
-    border: 1px solid black;
+    height: 30px;
+    width: 30px;
+    border-bottom: 1px solid black;
     margin: 0px 7.5px;
 }
 
+.Box.active {
+    border-bottom: 1px solid #ff7919;
+}
+
 .Circle {
-    height: 10px;
-    width: 10px;
-    border: 1px solid red;
-    border-radius: 100%;
-    margin: 1px;
+    margin: 5px;
 }
 
 .boxInput {
@@ -33,6 +52,7 @@
     height: 80%;
     border: none;
     caret-color: transparent;
+    background: none;
 }
 
 .boxInput:focus-visible {

@@ -1,20 +1,21 @@
 .Header {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    width: 400px;
+    align-items: center;
+    padding: 30px 15px;
     margin: 0 auto;
-    position: relative;
+    border-bottom: 1px solid #00000040;
+    font-size: 18px;
 }
 
 .instructions {
-    position: absolute;
-    left: 1em;
-    top: 2.2em;
+    margin-right: 15px;
 }
 
 .leaderboard {
-    position: absolute;
-    right: 1em;
-    top: 2.2em;
+    margin-left: 15px;
+}
+
+.titleText {
+    margin: 0px;
 }
