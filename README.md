@@ -14,8 +14,9 @@ Based on the classic guessing game, Mastermind. The player attempts to guess the
 After Downloading npm you should be able to access the game by running the following from your terminal:
 
 ### Clone Repository
-```
+
 $ cd [workspace directory] 
+```
 $ git clone https://github.com/Sparky-code/safecracker.git
 ```
 # Run Program
