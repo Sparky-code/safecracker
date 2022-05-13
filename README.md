@@ -2,8 +2,7 @@
   <h1>Safe Cracker</h1>
 Based on the classic guessing game, Mastermind. The player attempts to guess the sequence of numbers with varying degrees of complexity and speed.
   
-![image](https://user-images.githubusercontent.com/95888938/168194060-bb77613a-cf1f-46b1-a935-8fde9e1dda5e.png)
-![image](https://user-images.githubusercontent.com/95888938/168194141-6d42d901-3ef5-44fe-9002-463b1fef7d02.png)
+  ![gamePlay](https://user-images.githubusercontent.com/95888938/168212465-9fa0b6c4-0de5-45b6-872a-e675c9ade329.png)
   
 </div>
 
