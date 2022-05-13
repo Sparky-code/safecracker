@@ -1,38 +1,29 @@
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 <div align='center'>
   <h1>Safe Cracker</h1>
-A version of the classic guessing game, mastermind. The player has 10 chances to guess the sequence of numbers within a chosen time limit
- 
-//
-//
-//
-//
-// Game Cover Screen Image //
-//
-//
-//
+Based on the classic guessing game, Mastermind. The player attempts to guess the sequence of numbers with varying degrees of complexity and speed.
+  
+![image](https://user-images.githubusercontent.com/95888938/168194060-bb77613a-cf1f-46b1-a935-8fde9e1dda5e.png)
+![image](https://user-images.githubusercontent.com/95888938/168194141-6d42d901-3ef5-44fe-9002-463b1fef7d02.png)
+  
 </div>
 
 ## Installation Requirements
 
 ### Setup
 
-After Downloading npm you should be able to access the game by running the following:
+After Downloading npm you should be able to access the game by running the following from your terminal:
 
 ### Clone Repository
-
-`$ cd [workspace directory]
-$ git clone `
-
+```
+$ cd [workspace directory] 
+$ git clone https://github.com/Sparky-code/safecracker.git
+```
 # Run Program
-
-`$ cd safecracker
+```
+$ cd safecracker 
 $ npm install
-$ npm start`
+$ npm start
+```
 
 Open http://localhost:3000 to view project in the browser if the browser does not open automatically.
 
@@ -41,6 +32,7 @@ Open http://localhost:3000 to view project in the browser if the browser does no
 - Player enters a username and selects a difficulty level.
 - Player is given 10 chances to guess the secret pattern of numbers.
 - Game is over when player succeeds in guessing the pattern or has no more attempts.
+- Increasing the difficulty will give you less chances and more complex patterns.
 
 Note: Numbers can be repeated in the secret pattern.
 
@@ -64,8 +56,6 @@ Note: Numbers can be repeated in the secret pattern.
 - Post game scores to a leaderboard.
 
 ## Wireframe
-
-<img/>
 
 - Clean minimal design.
 - Focus on visual feedback.
@@ -97,32 +87,12 @@ solving the puzzle faster or choosing a higher difficulty.
 
 ## Built With
 
-React.js - JavaScript Framework
-Axios - Promise based HTTP client for browser and node.js
-Random.org - Random number generation API
+[React.js](https://reactjs.org/) - JavaScript Framework <br/>
+[Axios](https://axios-http.com/docs/intro) - Promise based HTTP client for browser and node.js <br/>
+[Random.org](https://www.random.org/) - Random number generation API
 
 ## Author
 
-- Devin Krizwold Github 
+- Devin Krizwold [Github](https://github.com/Sparky-code) 
 
 Thank you for playing!
-
-
-
-    // async function getRandomNumbers() {
-    //   const number = 4;
-    //   const maxNumber = 7;
-    //   const query = `?num=4&min=0&max=${maxNumber}&col=1&base=10&format=plain&rnd=new`;
-    //   const url = `https://www.random.org/integers/${query}`;
-      
-    //   try {
-    //     let res = await fetch(url, {method:'GET', mode:'cors', credentials:'same-origin', headers:{'Content-Type':'application/json'}, referrerPolicy:'origin-when-cross-origin'});
-    //     // res = await res.json();
-    //     console.log(res)
-    //     setSuperSecretNumbers(res);
-    //   } catch (error) {
-    //     console.log(error)
-    //     setSuperSecretNumbers(Math.floor(Math.random() * (number + 1)));
-    //   }
-    // }
-    // cors issue with external API > fallback to random number generator
