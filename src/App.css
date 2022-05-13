@@ -48,13 +48,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
   width: 300px;
   height: 30px;
   font-size: 40px;
 }
 
 .superSecretReveal {
-  font-size: 18px;
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 15px;
+  margin-bottom: 5px;
 }
 
 .replayPrompt {
@@ -71,7 +75,7 @@
   border: 0.5px solid #00000057;
   border-radius: 5px;
   margin: 0 auto;
-  padding: 70px;
+  padding: 90px;
   font-size: 30px;
   background-color: white;
   z-index: 999999;

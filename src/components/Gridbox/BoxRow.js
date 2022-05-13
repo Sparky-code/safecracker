@@ -28,7 +28,7 @@ function BoxRow({ cells, maybeHandleFail, reportScore, row }) {
             }
             setIsActive(false);
         }
-    },[rowResults, maybeHandleFail, superSecretNumbers]);
+    },[row, rowResults, maybeHandleFail, superSecretNumbers]);
 
     return <div  className={`BoxRow${isActive ? '':' failed'}`}>
         <div className={`BoxRowNumbers${isActive ? '':' failed'}`}>
