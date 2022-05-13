@@ -1,7 +1,6 @@
 import Circle from "./Circle";
 
 function BoxRowResults ({ isActive, reportScore, rowResults, superSecretNumbers }) {
-    console.log(superSecretNumbers)
     let secretNumbersCopy = [...superSecretNumbers];
     const correctBucket = [];
     const existsBucket = [];

@@ -26,6 +26,13 @@
   margin: 0 auto;
 }
 
+.legend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid black;
+}
+
 .safeAnimation {
   display: flex;
   justify-content: center;
@@ -47,7 +54,7 @@
 }
 
 .superSecretReveal {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .replayPrompt {
@@ -55,20 +62,39 @@
   flex-direction: column;
   justify-content: center;
   position: absolute;
-  top: 30%;
-  left: 45%;
+  width: 300px;
+  height: 300px;
+  top: 20%;
+  right: 20%;
+  bottom: 20%;
+  left: 20%;
   border: 0.5px solid #00000057;
   border-radius: 5px;
   margin: 0 auto;
-  padding: 65px;
+  padding: 70px;
   font-size: 30px;
   background-color: white;
   z-index: 999999;
 }
 
 .finalScoreDisplay {
+  display: flex;
+  justify-content: center;
   font-size: 24px;
   border-bottom: 1px solid Black;
-  margin-bottom: 15px;
+}
+
+.winAnimation svg {
+  width: 15%;
+  margin: 0 auto;
+}
+
+.replayButton {
+  border: none;
+  background-color: #8bfae9;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 0.7em;
 }
 

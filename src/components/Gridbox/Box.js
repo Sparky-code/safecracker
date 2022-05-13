@@ -4,7 +4,7 @@ import './Gridbox.css';
 function Box({ boxKey, handleSelection }) {
     const [editing, setEditing] = useState(false);
     const [boxValue, setBoxValue] = useState();
-    const availableNumbers = ['0','1','2','3','4','5','6'];
+    const availableNumbers = ['0','1','2','3','4','5','6','7'];
     
     function handleChange({ target:{ value } }) {
         if(!availableNumbers.includes(value)) {

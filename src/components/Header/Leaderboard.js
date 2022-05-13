@@ -9,18 +9,18 @@ function Leaderboard({ closeOverlay, leaders }) {
     return <div className="Leaderboard">
         {leaders.length === 0 ? <div>No Current High Scores</div> : <table>
             <tbody  className='leaderboardColumns'>
-            <tr>
+                <tr>
                 <th>User Name</th>
                 <tr>
                 {leaders.map(({userName}, i) => <td className='leaderData' key={`userName-${i}-key`}>{userName}</td>)}
-            </tr>
-            </tr>
-            <tr>
+                </tr>
+                </tr>
+                <tr>
                 <th>Score</th>
                 <tr>
                 {leaders.map(({score}, i) => <td className='leaderData' key={`score-${i}-key`}>{score}</td>)}
-            </tr>
-            </tr>
+                </tr>
+                </tr>
             </tbody>
         </table>}
         {leaders.length > 0 && <button className='clearLeaderboardButton' onClick={handleClearLeaderboard}>Clear Leaderboard</button>}

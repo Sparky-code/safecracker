@@ -4,7 +4,7 @@
     align-items: center;
     padding: 30px 15px;
     margin: 0 auto;
-    border-bottom: 1px solid #00000040;
+    background-color: #8bfae9b4;
     font-size: 18px;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .titleText {
-    margin: 0px;
+    margin: 0 100px;
 }
 
 .Leaderboard {

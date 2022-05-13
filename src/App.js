@@ -3,9 +3,11 @@ import './App.css';
 import { Gridbox, Header } from './components';
 import GameContext from './context';
 import Animation from './components/Animation/Animation';
+import WinAnimation from './components/Animation/WinAnimation';
 import WelcomeOverlay from './WelcomeOverlay';
 import Success from './Success';
 import { GAME_SCORE_MAP } from './constants'
+import Circle from './components/Gridbox/Circle';
 
 function App() {
   const [firstRun, setFirstRun] = useState(true);
@@ -57,11 +59,11 @@ function App() {
     <>
       {!gameConfig ? <WelcomeOverlay setGameConfig={setGameConfig} /> : <GameContext.Provider value={{ superSecretNumbers }}>
         <Header score={score} userName={gameConfig.userName} />
-        {/* <Mode/> */}
-        {(gameComplete || success) && score && <div className='replayPrompt'><div className='finalScoreDisplay'>Final Score: {score}</div><button onClick={() => window.location.reload()}>Play Again?</button></div>}
+        {(gameComplete || success) && score && <div className='replayPrompt'><div className='finalScoreDisplay'>Final Score: {score}</div><WinAnimation className={'winAnimation'} /><button className='replayButton' onClick={() => window.location.reload()}>Play Again?</button></div>}
         <div className="App">
           <div className='gameData'>
-            <div className='gameMetrics'>5:00</div><br/>
+          <div className='legend'>Correct: <Circle type='correct'/> |  Exists: <Circle type='exists'/> |  Miss: <Circle type='miss'/></div>
+            <div className='gameMetrics'></div><br/>
             <div className="safeAnimation">
               <Animation className="animation"/>
             </div>
