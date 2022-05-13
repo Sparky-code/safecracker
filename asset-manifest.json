@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Sparky-code/safecracker/static/css/main.e0a960d1.css",
+    "main.js": "/Sparky-code/safecracker/static/js/main.462a6762.js",
+    "static/js/787.c2216637.chunk.js": "/Sparky-code/safecracker/static/js/787.c2216637.chunk.js",
+    "index.html": "/Sparky-code/safecracker/index.html",
+    "static/media/questionMark.svg": "/Sparky-code/safecracker/static/media/questionMark.95845a37195aab2e0bacdbee22ca5b92.svg",
+    "static/media/award.svg": "/Sparky-code/safecracker/static/media/award.1ca6c258ab69c5aa417a7f3f04f29e65.svg",
+    "static/media/unlock.svg": "/Sparky-code/safecracker/static/media/unlock.48d2d175e232a9c4585ffed18a8ad9df.svg",
+    "static/media/close.svg": "/Sparky-code/safecracker/static/media/close.6c9a4ba71a333be7b021fc6da39d864c.svg",
+    "main.e0a960d1.css.map": "/Sparky-code/safecracker/static/css/main.e0a960d1.css.map",
+    "main.462a6762.js.map": "/Sparky-code/safecracker/static/js/main.462a6762.js.map",
+    "787.c2216637.chunk.js.map": "/Sparky-code/safecracker/static/js/787.c2216637.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e0a960d1.css",
+    "static/js/main.462a6762.js"
+  ]
+}
