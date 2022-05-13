@@ -89,7 +89,8 @@ solving the puzzle faster or choosing a higher difficulty.
 
 [React.js](https://reactjs.org/) - JavaScript Framework <br/>
 [Axios](https://axios-http.com/docs/intro) - Promise based HTTP client for browser and node.js <br/>
-[Random.org](https://www.random.org/) - Random number generation API
+[Random.org](https://www.random.org/) - Random number generation API 
+  Note: The random API implements a 'cors' mode when calling the API which did not work in my development evironment. As a result the Random API was not implemented in the final build
 
 ## Author
 
