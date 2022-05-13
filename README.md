@@ -4,6 +4,8 @@ Based on the classic guessing game, Mastermind. The player attempts to guess the
   
 ![gamePlay](https://user-images.githubusercontent.com/95888938/168223033-cd20af25-4736-4fc4-894a-54e0f4e4f325.png)
 
+[Live Link](https://627eb87e9801300b6b9fa03e--idyllic-raindrop-ad19be.netlify.app/)
+
 </div>
 
 ## Installation Requirements
