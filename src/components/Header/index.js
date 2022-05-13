@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Header.css";
 import { Award, QuestionMark } from "../../assets";
 import Overlay from "../Overlay";
+import Leaderboard from "./Leaderboard";
 import { instructions } from "./constants";
 
 
@@ -10,7 +11,8 @@ function Header() {
     const [overlayContent, setOverlayContent] = useState('');
 
     const handleAwardClick = () => {
-        setOverlayContent(Award);
+        const leaders = JSON.parse(window.localStorage.getItem('leaders')) ?? [];
+        setOverlayContent(<Leaderboard closeOverlay={() => setIsOpen(false)} leaders={leaders}/>);
         setIsOpen(true)
     } 
     const handleQuestionMarkClick = () => {

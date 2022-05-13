@@ -1,6 +1,6 @@
 import Circle from "./Circle";
 
-function BoxRowResults ({ isActive, rowResults, superSecretNumbers }) {
+function BoxRowResults ({ isActive, reportScore, rowResults, superSecretNumbers }) {
     console.log(superSecretNumbers)
     let secretNumbersCopy = [...superSecretNumbers];
     const correctBucket = [];
@@ -24,7 +24,8 @@ function BoxRowResults ({ isActive, rowResults, superSecretNumbers }) {
                     break;
                 }
             }
-        } 
+        }
+        reportScore([...correctBucket, ...existsBucket, ...missesBucket])
     }
 
     return <div className="BoxRowResults">

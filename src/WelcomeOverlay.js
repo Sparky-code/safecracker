@@ -42,7 +42,7 @@ function WelcomeOverlay({ setGameConfig }) {
             timer = setTimeout(() => setHasError(false), 3000);
             return;
         }
-        setGameConfig({userName, difficulty: GAME_MODE_MAP[difficulty]});
+        setGameConfig({userName, difficulty, difficultyConfig: GAME_MODE_MAP[difficulty]});
     }
 
     return <div className="WelcomeOverlay">

@@ -19,3 +19,39 @@
 .titleText {
     margin: 0px;
 }
+
+.Leaderboard {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+
+.leaderboardColumns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    columns: 2;
+}
+
+.leaderData {
+    display: flex;
+    flex-direction: column;
+}
+
+.clearLeaderboardButton {
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: none;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+th {
+    border-bottom: 1px solid black;
+}
+
+
+  
+  

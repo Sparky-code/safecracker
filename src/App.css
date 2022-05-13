@@ -19,8 +19,8 @@
   display: flex;
   justify-content: center;
   align-items: top;
-  font-weight: 500;
-  font-size: 24px;
+  font-weight: lighter;
+  font-size: 34px;
   width: 300px;
   height: 50px;
   margin: 0 auto;
@@ -39,13 +39,36 @@
 
 .secretNumbersDisplay {
   display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 30px;
-    font-size: 40px;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 30px;
+  font-size: 40px;
 }
 
 .superSecretReveal {
   font-size: 16px;
 }
+
+.replayPrompt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  border: 0.5px solid #00000057;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 65px;
+  font-size: 30px;
+  background-color: white;
+  z-index: 999999;
+}
+
+.finalScoreDisplay {
+  font-size: 24px;
+  border-bottom: 1px solid Black;
+  margin-bottom: 15px;
+}
+

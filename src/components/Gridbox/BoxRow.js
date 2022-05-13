@@ -4,13 +4,17 @@ import Box from "./Box";
 import BoxRowResults from "./BoxRowResults";
 import './Gridbox.css'
 
-function BoxRow({ cells, maybeHandleFail, row }) {
+function BoxRow({ cells, maybeHandleFail, reportScore, row }) {
     const {superSecretNumbers} = useContext(GameContext);
     const [rowResults, setRowResults] = useState(new Array(cells).fill('').reduce((agg, cell, i) => ({...agg, [`box${i}`]: ''}), {}));
     const [isActive, setIsActive] = useState(true);
 
     function handleSelection(boxKey, boxValue) {
         setRowResults({...rowResults, [`${boxKey}`]:boxValue});
+    }
+
+    function handleReportScore(scoreStatuses) {
+        reportScore(scoreStatuses, row);
     }
 
     useEffect(()=> {
@@ -30,7 +34,7 @@ function BoxRow({ cells, maybeHandleFail, row }) {
         <div className={`BoxRowNumbers${isActive ? '':' failed'}`}>
             {Object.keys(rowResults).map((boxKey) => <Box key={boxKey} boxKey={boxKey} handleSelection={handleSelection}/>)}
         </div>
-        {superSecretNumbers && superSecretNumbers.length && Object.values(rowResults).length === cells && <BoxRowResults rowResults={Object.values(rowResults)} isActive={isActive} superSecretNumbers={superSecretNumbers}/>}
+        {superSecretNumbers && superSecretNumbers.length && Object.values(rowResults).length === cells && <BoxRowResults reportScore={handleReportScore} rowResults={Object.values(rowResults)} isActive={isActive} superSecretNumbers={superSecretNumbers}/>}
     </div>
 }
 

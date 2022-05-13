@@ -3,73 +3,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
 <div align='center'>
   <h1>Safe Cracker</h1>
 A version of the classic guessing game, mastermind. The player has 10 chances to guess the sequence of numbers within a chosen time limit
@@ -84,25 +17,97 @@ A version of the classic guessing game, mastermind. The player has 10 chances to
 //
 </div>
 
+## Installation Requirements
+
+### Setup
+
+After Downloading npm you should be able to access the game by running the following:
+
+### Clone Repository
+
+`$ cd [workspace directory]
+$ git clone `
+
+# Run Program
+
+`$ cd safecracker
+$ npm install
+$ npm start`
+
+Open http://localhost:3000 to view project in the browser if the browser does not open automatically.
+
+## How to Play
+
+- Player enters a username and selects a difficulty level.
+- Player is given 10 chances to guess the secret pattern of numbers.
+- Game is over when player succeeds in guessing the pattern or has no more attempts.
+
+Note: Numbers can be repeated in the secret pattern.
+
+## Difficulty Levels
+
+- Easy: 10 Rounds, 4 numbers, 5 minutes
+- Hard: 8 Rounds, 6 numbers, 4 minutes
+- God Mode: 6 Rounds, 8 numbers, 3 minutes
+
+## Goals
+
+- Display a game board similar to the classical mastermind game board.
+- Generate random integers using the Random.org API.
+- Allow for the user to input their guesses with mouse and keyboard.
+- Provide a way for the player to get feedback on their guess after each round.
+- Prohibit the ability to change an answer once feedback is given.
+- Provide a visual indicator of how many rounds remain.
+- Announce Win / Loss.
+- Provide the option to play again.
+- Track score with point assignments to types of guesses.
+- Post game scores to a leaderboard.
+
+## Wireframe
+
+<img/>
+
+- Clean minimal design.
+- Focus on visual feedback.
+- Reveal secret pattern when game is over.
+- Include animation to celebrate a win.
+
+## Game Rules
+
+- You must enter your username and selects a difficulty level.
+- You are given 10 chances to guess the secret pattern of numbers.
+- You can choose greater complexity in the pattern depending on difficulty.
+- You will recieve feedback in the form of green, yellow, and transparent colored dots, indicating a correct number and placement, an existing number, or an incorrect guess respectively. 
+- You can compete against others or your own best score posted to the leaderboard by 
+solving the puzzle faster or choosing a higher difficulty.
+
+## Extensions Implemented
+
+- Difficulty Levels
+- Instructions
+- Leaderboard (Username and Score)
+- Animations
+
+## Extensions to add/improve
+
+- Timer
+- Random number generation
+- Responsiveness
+- Improve UI
+
+## Built With
+
+React.js - JavaScript Framework
+Axios - Promise based HTTP client for browser and node.js
+Random.org - Random number generation API
+
+## Author
+
+- Devin Krizwold Github 
+
+Thank you for playing!
 
 
-# Downloads
-### Download from Github
-* [Source Code]()
-### Download from the Command Line
-*You must have git installed*
-* ``` data request ```
-# Game Access
-* Open the **index.html** file in your browser to play the game
-# Game Play
-.
-.
-.
-# Resources
->>>>>>> d40f294135be005bae7c0ca380561eae5a655dd9
-
-
-# Ref for later 
 
     // async function getRandomNumbers() {
     //   const number = 4;
