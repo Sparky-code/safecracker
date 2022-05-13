@@ -46,7 +46,7 @@ function App() {
     const leaders = JSON.parse(localStorage.getItem('leaders')) ?? [];
     setScore(cachedScore);
     if(success) localStorage.setItem('leaders', JSON.stringify([...leaders, {userName: gameConfig.userName, score: cachedScore}]));
-  }, [gameComplete, success, gameConfig.userName, cachedScore])
+  }, [gameComplete, success, gameConfig, cachedScore])
 
   useEffect(() => {
     if(firstRun && gameConfig) {
