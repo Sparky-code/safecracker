@@ -22,7 +22,7 @@ function App() {
     if(success) {
       setSuccess(true);
     }
-    if(gameConfig.difficulty.rows -1 === row) {
+    if(gameConfig.difficultyConfig.rows -1 === row) {
       setGameComplete(true);
     }
   }
@@ -68,7 +68,7 @@ function App() {
               <Animation className="animation"/>
             </div>
             {success && <Success/> }
-            <div className='secretNumbersDisplay'>{superSecretNumbers && gameComplete ? <span className='superSecretReveal'>{superSecretNumbers}</span> : new Array(gameConfig.difficultyConfig.cells).fill('*')}</div>
+            <div className='secretNumbersDisplay'>{superSecretNumbers && gameComplete ? <span className='superSecretReveal'>{superSecretNumbers}</span> && <button className='replayButton' onClick={() => window.location.reload()}>Play Again?</button> : new Array(gameConfig.difficultyConfig.cells).fill('*')}</div>
           </div>
           <Gridbox reportScore={reportScore} gameSettings={gameConfig.difficultyConfig} maybeHandleFail={maybeHandleFail} />
         </div>
