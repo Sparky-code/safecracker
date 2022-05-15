@@ -99,3 +99,4 @@ solving the puzzle faster or choosing a higher difficulty.
 - Devin Krizwold [Github](https://github.com/Sparky-code) 
 
 Thank you for playing!
+(For testing, set your username to 'Admin', this will set the code to count up from 0. i.e, Easy code: 0, 1, 2, 3)
