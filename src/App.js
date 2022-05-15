@@ -33,7 +33,7 @@ function App() {
         case 'correct':
           cachedScore += GAME_SCORE_MAP.scoringTable[row] * GAME_SCORE_MAP[gameConfig.difficulty].correctBaseScore;
           return;
-        case 'exists': 
+        case 'exists':
           cachedScore += GAME_SCORE_MAP.scoringTable[row] * GAME_SCORE_MAP[gameConfig.difficulty].existsBaseScore;
           return;
         default:
@@ -45,10 +45,15 @@ function App() {
   useEffect(() => {
     const leaders = JSON.parse(localStorage.getItem('leaders')) ?? [];
     setScore(cachedScore);
-    if(success) localStorage.setItem('leaders', JSON.stringify([...leaders, {userName: gameConfig.userName, score: cachedScore}]));
+    if(success) localStorage.setItem('leaders', JSON.stringify([...leaders, {userName: gameConfig.userName, score: cachedScore}]));   
   }, [gameComplete, success, gameConfig, cachedScore])
 
   useEffect(() => {
+    if(firstRun && gameConfig && gameConfig.userName === 'Admin'){
+      setSuperSecretNumbers(new Array(gameConfig.difficultyConfig.cells).fill('').map((num, i) => i.toString()));
+      setFirstRun(false);
+      return;
+    }
     if(firstRun && gameConfig) {
       setSuperSecretNumbers(new Array(gameConfig.difficultyConfig.cells).fill('').map(() => Math.floor(Math.random() * (gameConfig.difficultyConfig.cells + 1)).toString()));
       setFirstRun(false);
@@ -59,16 +64,26 @@ function App() {
     <>
       {!gameConfig ? <WelcomeOverlay setGameConfig={setGameConfig} /> : <GameContext.Provider value={{ superSecretNumbers }}>
         <Header score={score} userName={gameConfig.userName} />
-        {(gameComplete || success) && score && <div className='replayPrompt'><div className='finalScoreDisplay'>Final Score: {score}</div><WinAnimation className={'winAnimation'} /><button className='replayButton' onClick={() => window.location.reload()}>Play Again?</button></div>}
+        {success && score && 
+          <div className='replayPrompt'>
+            <div className='finalScoreDisplay'>Final Score: {score}</div>
+            <span className='superSecretReveal'>{superSecretNumbers}</span>
+            <WinAnimation className={'animation'} />
+            <button className='replayButton' onClick={() => window.location.reload()}>Play Again?</button>
+          </div>
+        }
         <div className="App">
           <div className='gameData'>
-          <div className='legend'>Correct: <Circle type='correct'/> |  Exists: <Circle type='exists'/> |  Miss: <Circle type='miss'/></div>
-            <div className='gameMetrics'></div><br/>
+            <div className='legend'>Correct: <Circle type='correct'/> |  Exists: <Circle type='exists'/> |  Miss: <Circle type='miss'/></div><br/>
+            <div className='secretNumbersDisplay'>
+              {superSecretNumbers && gameComplete ? <span className='superSecretReveal'>{superSecretNumbers}</span> : new Array(gameConfig.difficultyConfig.cells).fill('*')}</div>
             <div className="safeAnimation">
               <Animation className="animation"/>
             </div>
+            <div className='secretNumbersDisplay'>
+              {gameComplete && <button className='replayButton' onClick={() => window.location.reload()}>Play Again?</button>}
+            </div>
             {success && <Success/> }
-            <div className='secretNumbersDisplay'>{superSecretNumbers && gameComplete ? <span className='superSecretReveal'>{superSecretNumbers}</span> && <button className='replayButton' onClick={() => window.location.reload()}>Play Again?</button> : new Array(gameConfig.difficultyConfig.cells).fill('*')}</div>
           </div>
           <Gridbox reportScore={reportScore} gameSettings={gameConfig.difficultyConfig} maybeHandleFail={maybeHandleFail} />
         </div>

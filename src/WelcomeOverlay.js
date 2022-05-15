@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Unlock } from './assets';
 import './WelcomeOverlay.css';
 
-function WelcomeOverlay({ setGameConfig }) {
+function WelcomeOverlay({ setGameConfig }) {        
     const [difficulty, setDifficulty] = useState('Easy');
     const [userName, setUsername] = useState('');
     const [hasError, setHasError] = useState(false);
@@ -11,17 +11,14 @@ function WelcomeOverlay({ setGameConfig }) {
         Easy:{
             rows: 10,
             cells: 4,
-            time: 5,
         },
         Hard:{
             rows: 8,
             cells: 6,
-            time: 4,
         },
         'God Mode':{
             rows: 6,
             cells: 8,
-            time: 3,
         },
     };
     let timer;

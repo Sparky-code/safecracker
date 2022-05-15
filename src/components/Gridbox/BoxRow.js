@@ -6,6 +6,7 @@ import './Gridbox.css'
 
 function BoxRow({ cells, maybeHandleFail, reportScore, row }) {
     const {superSecretNumbers} = useContext(GameContext);
+    // Generates a configuration object for rendering and tracking boxes. e.g. { box0:'', box1:'' ... } 
     const [rowResults, setRowResults] = useState(new Array(cells).fill('').reduce((agg, cell, i) => ({...agg, [`box${i}`]: ''}), {}));
     const [isActive, setIsActive] = useState(true);
 
@@ -30,7 +31,7 @@ function BoxRow({ cells, maybeHandleFail, reportScore, row }) {
         }
     },[row, rowResults, maybeHandleFail, superSecretNumbers]);
 
-    return <div  className={`BoxRow${isActive ? '':' failed'}`}>
+    return <div  className={`BoxRow${isActive ? '':' failed'}`}>        
         <div className={`BoxRowNumbers${isActive ? '':' failed'}`}>
             {Object.keys(rowResults).map((boxKey) => <Box key={boxKey} boxKey={boxKey} handleSelection={handleSelection}/>)}
         </div>

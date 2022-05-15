@@ -6,8 +6,8 @@ function Leaderboard({ closeOverlay, leaders }) {
         closeOverlay();
     }
 
-    return <div className="Leaderboard">
-        {leaders.length === 0 ? <div>No Current High Scores</div> : <table>
+    return <div className="Leaderboard">        
+        {leaders.length === 0 ? <div>No Current High Scores</div> : <table>     
             <tbody  className='leaderboardColumns'>
                 <tr>
                 <th>User Name</th>

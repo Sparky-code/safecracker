@@ -24,16 +24,16 @@ function BoxRowResults ({ isActive, reportScore, rowResults, superSecretNumbers 
                 }
             }
         }
-        reportScore([...correctBucket, ...existsBucket, ...missesBucket])
+        reportScore([...correctBucket, ...existsBucket, ...missesBucket]);
     }
 
-    return <div className="BoxRowResults">
+    return <div className="BoxRowResults"> 
         {isActive ? <>
             {superSecretNumbers.map((num, i) => <Circle key={`circle-${num}-${i}`} />)}
         </>
         :
         <>
-            {[...correctBucket, ...existsBucket, ...missesBucket].map((type, i) => <Circle type={type} key={`circle-${type}-${i}`} />)}
+            {[...correctBucket, ...existsBucket, ...missesBucket].map((type, i) => <Circle type={type} key={`circle-${type}-${i}`} />)} 
         </>
         }
     </div>
